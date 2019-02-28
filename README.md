@@ -1,7 +1,7 @@
 # i2c_LCD
 A GoLang program for displaying local nonLoopBack IP adresses on a 16x2 i2c LCD. 
 
-####Adapted from:
+###Adapted from:
 http://golang-examples.tumblr.com/post/99458329439/get-local-ip-addresses
 
 https://github.com/davecheney/i2c
