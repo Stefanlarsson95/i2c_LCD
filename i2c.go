@@ -56,7 +56,7 @@ func (i2c *I2C) Close() error {
 }
 
 func ioctl(fd, cmd, arg uintptr) (err error) {
-	_, _, e1 := syscall.Syscall6(syscall.SYS_IOCTL, fd, cmd, arg, 0, 0, 0,0)
+	_, _, e1 := syscall.Syscall6(syscall.SYS_IOCTL, fd, cmd, arg, 0, 0, 0)
 	if e1 != 0 {
 		err = e1
 	}
