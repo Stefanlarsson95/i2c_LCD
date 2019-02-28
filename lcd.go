@@ -20,6 +20,7 @@ const (
 	// OPT_Display_Shift  = 0x01 // CMD_Entry_Mode
 	OPT_Enable_Display = 0x04 // CMD_Display_Control
 	OPT_Enable_Cursor  = 0x02 // CMD_Display_Control
+	OPT_Disable_Cursor = 0x00
 	OPT_Enable_Blink   = 0x01 // CMD_Display_Control
 	OPT_Display_Shift  = 0x08 // CMD_Cursor_Display_Shift
 	OPT_Shift_Right    = 0x04 // CMD_Cursor_Display_Shift 0 = Left
@@ -62,7 +63,7 @@ func NewLcd(i2c *I2C, en, rw, rs, d4, d5, d6, d7, backlight byte) (*Lcd, error) 
 	time.Sleep(10 * time.Millisecond)
 
 	lcd.command(CMD_Function_Set | OPT_2_Lines)
-	lcd.command(CMD_Display_Control | OPT_Enable_Display | OPT_Enable_Cursor)
+		lcd.command(CMD_Display_Control | OPT_Enable_Display | OPT_Disable_Cursor)
 	lcd.command(CMD_Clear_Display)
 	lcd.command(CMD_Entry_Mode | OPT_Increment | OPT_Display_Shift)
 
